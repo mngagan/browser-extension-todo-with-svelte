@@ -1,19 +1,26 @@
 {
-  "manifest_version": 2,
-  "name": "Svelte-made Browser Extension",
+  "manifest_version": 3,
+  "name": "Todo List",
   "version": "1.0.0",
-  "permissions": ["storage"],
-  "background": {
-    "scripts": ["build/background.js"],
-    "persistent": false
+  "permissions": [
+    "storage"
+  ],
+  "icons": {
+    "16": "check16.png",
+    "48": "check48.png",
+    "128": "check128.png"
   },
-  "browser_action": {
+  "action": {
     "default_popup": "index.html"
   },
   "content_scripts": [
     {
-      "matches": ["https://*/*"],
-      "js": ["build/injection.js"]
+      "matches": [
+        "https://*/*"
+      ],
+      "js": [
+        "build/bundle.js"
+      ]
     }
   ]
 }
